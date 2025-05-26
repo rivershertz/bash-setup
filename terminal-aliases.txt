@@ -11,6 +11,14 @@ alias gps='git push'
 alias gs='git switch'
 alias gsn='git switch -C'
 alias gc='git add . && git commit -m'
+alias gf='git fetch -a'
+
+# Add work or personal ssh keys based on directory
+if [[ "$PWD" == $HOME/work* ]]; then
+  ssh-add ~/.ssh/<WORK_SSH_PRIVATE_KEY> &>/dev/null
+else
+  ssh-add ~/.ssh/<PERSONAL_SSH_PRIVATE_KEY> &>/dev/null
+fi
 
 **** NVM setup on Mac ****
 export NVM_DIR="$HOME/.nvm"
